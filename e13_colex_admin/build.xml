@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="e13_colex_admin" default="all" basedir=".">
+    <description>Builds, tests, and runs the project colex_admin</description>
+    <!-- =================================================================== -->
+    <!-- INIT                                                                -->
+    <!-- =================================================================== -->
+    <target name="init" 
+            description="Initialize variables and define patterns and filters.">  
+
+    <!-- Variables -->
+    <property name="name"           value="ColexAdmin" />    
+    <property name="year"           value="2006-09" />
+
+    <property name="src.dir"        location="src" />
+    <property name="lib.dir"        location="web/WEB-INF/lib" />
+    <property name="build.dir"      location="build" />
+    <property name="dist.dir"       location="dist" />
+    <property name="deploy.dir"     location="deploy" />
+    <property name="web.dir"        location="web" />
+    <property name="apidoc.dir"     location="apidoc" />
+    
+    <!-- Colex_ws is currently targeted to JVM 1.7 -->
+    <property name="ant.build.javac.source" value="1.7"/>
+    <property name="ant.build.javac.target" value="1.7"/>
+
+    <!-- Compiler options -->
+    <property name="debug"          value="off" />    
+    <property name="deprecation"    value="off" />    
+    <property name="optimize"       value="on" />    
+    
+    <!-- Patterns -->
+    <patternset id="props" >
+        <include name="**/*.properties"/>
+    </patternset>
+
+    <!-- Display info -->
+    <echo message="---------------------"/>
+    <echo message="colex_admin build"/>
+    <echo message="---------------------"/>        
+    <echo message="Using ${ant.version}, in ${ant.home}"/>
+    <echo message="Using Java ${java.version} by ${java.vendor} in ${java.home}"/>
+    <echo message="Generating code for Java ${ant.build.javac.target}"/>
+
+        
+    <!-- Create dirs -->
+    <mkdir dir="${apidoc.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+    <mkdir dir="${build.dir}"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- MAIN                                                                -->
+  <!-- =================================================================== -->
+  <target name="all" 
+          depends="clean, e13_colex_admin" 
+          description="Build everything.">
+
+    <echo message="*** ADMIN COLEX successfully created!"/>
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- CLEAN                                                               -->
+  <!-- =================================================================== -->
+  <target name="clean" 
+          depends="init" 
+          description="Clean build dir">
+    <delete dir="${build.dir}" />
+    <echo message="*** Build dir cleared!"/>
+    <delete file="${dist.dir}/e13_colex_admin.war" />
+    <echo message="*** War file cleared!"/>
+    <delete file="${deploy.dir}/e13_colex_admin.ear" />
+    <echo message="*** Deploy file cleared!"/>
+  </target>
+
+ 
+  <!-- =================================================================== -->
+  <!-- COLEX_WS                                                        -->
+  <!-- =================================================================== -->
+  <target name="e13_colex_admin.compile" 
+          depends="init">
+    <mkdir dir="${build.dir}/web/WEB-INF/classes"/>
+
+    <copy todir="${build.dir}/web">
+        <fileset dir="${web.dir}">
+           <exclude name="**/WEB-INF/**" />
+        </fileset>            
+    </copy>        
+
+  	<copy file="${web.dir}/META-INF/context.xml" todir="${build.dir}/web/META-INF"/>
+
+  	<copy todir="${build.dir}/web/WEB-INF/classes">
+  	    <fileset dir="${src.dir}/java" includes="**/*.properties"/>
+  		<mapper type="glob" from="*.properties" to="*.properties"/> 
+  	</copy>
+
+  	<javac srcdir="${src.dir}"
+    	   destdir="${build.dir}/web/WEB-INF/classes" 
+           debug="${debug}"
+           deprecation="${deprecation}"
+           optimize="${optimize}" 
+	       source="${ant.build.javac.source}"
+	       target="${ant.build.javac.target}" >
+      <classpath>
+        <pathelement location="${lib.dir}/activation.jar"/>
+        <pathelement location="${lib.dir}/colex_domain.jar"/>
+        <pathelement location="${lib.dir}/commons-fileupload-1.1-dev.jar"/>
+        <pathelement location="${lib.dir}/commons-io-1.1.jar"/>
+        <pathelement location="${lib.dir}/dbconn.jar"/>
+        <pathelement location="${lib.dir}/log4j-1.2.16.jar"/>
+        <pathelement location="${lib.dir}/saaj-api.jar"/>
+        <pathelement location="${lib.dir}/saaj-impl.jar"/>
+        <pathelement location="${lib.dir}/xercesImpl.jar"/>
+        <pathelement location="${lib.dir}/jsp-api.jar"/>
+        <pathelement location="${lib.dir}/servlet-api.jar"/>
+    </classpath>
+    </javac>
+  </target>
+
+  <target name="e13_colex_admin.war" 
+          depends="e13_colex_admin.compile">
+    <war destfile="${dist.dir}/e13_colex_admin.war"
+         basedir="${build.dir}/web"
+         webxml="${web.dir}/WEB-INF/web.xml">
+        <manifest>
+            <attribute name="Built-By" 
+                       value="${user.name}"/>
+        </manifest>
+        <lib dir="${lib.dir}">
+          <include name="activation.jar"/>
+          <include name="colex_domain.jar"/>
+          <include name="commons-fileupload-1.1-dev.jar"/>
+          <include name="commons-io-1.1.jar"/>
+          <include name="dbconn.jar"/>
+          <include name="log4j-1.2.16.jar"/>
+          <include name="saaj-api.jar"/> 
+          <include name="saaj-impl.jar"/> 
+	      <include name="xalan.jar"/> 
+          <include name="xercesImpl.jar"/> 
+        </lib>
+    </war>
+  </target>
+  
+  <target name="e13_colex_admin.ear"
+  		  depends="e13_colex_admin.war">
+    <ear destfile="${deploy.dir}/e13_colex_admin.ear"
+         appxml="${deploy.dir}/xml/application.xml">
+        <manifest>
+            <attribute name="Built-By" 
+                       value="${user.name}"/>
+                 </manifest>
+      <fileset dir="${dist.dir}" includes="e13_colex_admin.war"/>
+    </ear>
+  </target>
+
+
+  <target name="e13_colex_admin" 
+          depends="clean, e13_colex_admin.ear">
+  </target>
+
+
+  <!-- =================================================================== -->
+  <!-- JAVADOC                                                             -->
+  <!-- =================================================================== -->
+  <target name="javadoc" 
+          depends="all" 
+          description="Editor QV JavaDoc">
+    <delete dir="${apidoc.dir}" />
+    <mkdir dir="${apidoc.dir}"/>
+    <javadoc encoding="ISO-8859-15" docencoding="ISO-8859-15" packagenames="edu.xtec.*" 
+             destdir="${apidoc.dir}" 
+             author="true" 
+             version="true" 
+             use="true" 
+             splitindex="true" 
+             noindex="false" 
+             windowtitle="${name} API" 
+             doctitle="${name}"
+             bottom="Copyright &#169; ${year} Sara Arjona. All Rights Reserved.">
+             <sourcepath>
+               <pathelement location="${src.dir}/web"/>
+             </sourcepath>
+             <excludepackage name="edu.xtec.resources.*" />
+    </javadoc>
+  </target>
+
+  </project>

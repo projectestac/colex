@@ -1,0 +1,63 @@
+.divMain
+{
+display: none;
+position: absolute;
+top: 95px;
+left: 260px;
+/*height: 750px;*/
+width: 700px;
+background-color: #B5DFEF;
+padding: 10px;
+
+}
+    
+.divInfo
+{
+display: none;
+background-color: #FFFFD6;
+position: absolute;
+right: 30px;
+top: 5px;
+padding: 2px 5px 2px 5px;
+}
+
+
+
+.close
+{
+position: absolute;
+top: 5px;
+right: 5px;
+}
+
+
+
+
+table
+{
+border: solid;
+border-width: 1px;
+margin: 20px 10px 10px 10px;
+font-size: 80%;
+background-color: white;
+padding: 5px;
+width: 95%;
+margin-top: 10px;
+}
+table .even
+{
+background-color: #F5DFFF;
+}
+
+
+
+
+
+#divSQLResult table .head
+{
+background-color: #666;
+color: white;
+}
+
+
+

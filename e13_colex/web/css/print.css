@@ -1,0 +1,70 @@
+.left
+{
+position: absolute;
+top: 0px;
+height: 100%;
+width: 100%;
+}
+
+.h2
+{
+position: absolute;
+top: 20px;
+}
+
+
+#tabRecord
+{
+/*border: 2px 2px 2px 2px;*/
+border-style: solid;
+border-color: #9cd75a;
+border-width: 1px 1px 0px 1px;
+}
+
+#contenidor
+{
+position: absolute;
+top: 80px;
+}
+
+
+div#header
+{
+display: none;
+}
+div#itemsRecord
+{
+display: none;
+}
+div#browser
+{
+display: none;
+}
+
+div.rightUp
+{
+display: none;
+}
+div.rightMid
+{
+display: none;
+}
+div.rightDown
+{
+display: none;
+}
+
+div.items
+{
+display: none;
+}
+#help
+{
+display: none;
+}
+#linkShowInfo
+{
+display: none;
+}
+
+

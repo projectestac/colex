@@ -1,0 +1,43 @@
+/* CSS Document */
+
+html, body{font-family:Geneva, Arial, Helvetica, sans-serif;}
+
+#imatge { display:none; visibility:hidden; margin:0px; padding:0px;
+}
+#TEXT {
+left:0px;
+	line-height:18px;
+	font-size:76%;
+	color:#333333;
+	padding-left:20px!important;
+	padding-right:20px;
+	padding-top: 0px;
+	}
+#menu
+{
+display:none;
+}
+
+.puja { display:none; visibility:hidden;}	
+.fila
+{
+margin-left: 50px;
+width:80%;
+margin-bottom: 30px;
+}
+
+.fila img
+{
+float: right;
+padding-bottom: 5px;
+padding-left: 10px;
+}
+
+.fila p
+{
+clear:both;
+margin-top:0px;
+margin-bottom:5px;
+padding-bottom:23px;
+border-bottom: 1px #222222 solid;
+}

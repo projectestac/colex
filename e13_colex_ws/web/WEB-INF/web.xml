@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<!--<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	 version="2.4">
+         -->
+<web-app>
+  <servlet>
+    <servlet-name>ServletCollection</servlet-name>
+    <servlet-class>edu.xtec.colex.server.ServletCollection</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ServletStructure</servlet-name>
+    <servlet-class>edu.xtec.colex.server.ServletStructure</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ServletRecord</servlet-name>
+    <servlet-class>edu.xtec.colex.server.ServletRecord</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ServletShare</servlet-name>
+    <servlet-class>edu.xtec.colex.server.ServletShare</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>ServletPortal</servlet-name>
+    <servlet-class>edu.xtec.colex.server.ServletPortal</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ServletCollection</servlet-name>
+    <url-pattern>/ServletCollection</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletStructure</servlet-name>
+    <url-pattern>/ServletStructure</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletRecord</servlet-name>
+    <url-pattern>/ServletRecord</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletShare</servlet-name>
+    <url-pattern>/ServletShare</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>ServletPortal</servlet-name>
+    <url-pattern>/ServletPortal</url-pattern>
+  </servlet-mapping>
+  
+  <session-config>
+    <session-timeout>
+            30
+        </session-timeout>
+  </session-config>
+  <welcome-file-list>
+    <welcome-file>
+            index.jsp
+        </welcome-file>
+    <welcome-file>
+            index.html
+        </welcome-file>
+    <welcome-file>
+            index.htm
+        </welcome-file>
+  </welcome-file-list>
+</web-app>

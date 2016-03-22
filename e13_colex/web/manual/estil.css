@@ -1,0 +1,87 @@
+/* CSS Document */
+
+html, body{position:absolute;top:0px;margin:0; padding:0; width:100%; height:100%; letter-spacing:0.01em; font-family:Arial, Helvetica, sans-serif; color:#3a3746;
+ 		background-image:url(img/fons.png); background-color: #ffffff; background-repeat:repeat-y; /*background-attachment:fixed;*/}
+
+#TEXT a:hover{ text-decoration:none;}
+
+h1 {color:#773f4d; padding-left:5PX;}
+
+h2 {border-bottom:#cccccc solid 1px; color:#ff61a0; font-size:170%; padding-bottom:2px;}
+
+h3 a {color:#733c4a;font-size:120%;  padding-bottom:0px; margin-bottom:0PX;}
+
+#imatge{position:absolute; top:0px; left:0px; z-index:10; width:266px; float: left; margin:0px; padding:0px;}
+
+#imatge a{color:#763e4c;  text-decoration:none;}
+		
+#imatge a:hover{color:#FF0000; text-decoration:underline;}
+
+#TEXT{line-height:18px;	font-size:76%; color:#333333; position:relative; padding-left:270px; padding-right:50px; padding-top: 0px; }
+
+#TEXT p {padding-left:20px;}
+
+
+
+
+#menulat ul li{ list-style:none; margin-left:-20PX; list-style-position:OUTSIDE; font-size:13px; font-weight:bold; line-height:20px;}
+#menulat ol li{ list-style:none; margin-left:-20PX; list-style-position:OUTSIDE; font-size:12px; font-weight:normal; line-height:20px;}
+
+#INFO{ padding:10PX; text-align:justify; border:1PX DOTTED #CC0000; margin:0PX; color:#CC0000;font-size:16px; background-color:#FFFFFF;}
+
+.invisible{ visibility:hidden;}
+
+#taula{ vertical-align:middle; border:1PX dotted #CCcccc; background-color:#FFFFFF;}
+
+#taula td{ height:90px; padding-left:10px;  }
+
+#form{ text-align:center; padding-top:30px; padding-bottom:60px;}
+
+#top{ margin-top:0px; padding:20px; font-weight:bold; border:1px solid #dddddd; background: #f6f7f6 url(imatges/top1.jpg) top left repeat-x;
+ line-height:20px;}
+
+#content{padding-left:20px;	padding-right:15px;	padding-top: 20px;}
+
+
+#menu {width: 95%; text-align:center; /*background-color:#999999;*/ border-bottom:1px solid #dddddd; padding:2px 0px 2px 0px;; margin-top:15px;}
+#menu a{color:#ff63a1;  text-decoration:none;}
+#menu a:hover{text-decoration:underline;}
+
+#menu li {  display:inline; list-style-type:none; border-left:2px solid #000000; text-transform:uppercase; padding:0px 5px 0px 5px; margin:0px; font-weight:bold; color:#FFFFFF; font-size:80%;  }
+
+.ultim {border-right:2px solid #000000;  }
+
+#detall{ float:right;}
+
+#titol{ margin-bottom:0px; padding-top:5px; padding-left:10px; margin-top:20px; color:#555555; font-size:130%;}
+
+.puja { float:right; font-size:12px; margin-top:-20px;}
+
+
+
+
+.fila
+{
+margin-left: 50px;
+width:80%;
+margin-bottom: 30px;
+}
+
+.fila img
+{
+float: right;
+padding-bottom: 5px;
+padding-left: 10px;
+}
+
+.fila p
+{
+clear:both;
+margin-top:0px;
+margin-bottom:5px;
+padding-bottom:23px;
+border-bottom: 1px #222222 solid;
+}
+
+
+

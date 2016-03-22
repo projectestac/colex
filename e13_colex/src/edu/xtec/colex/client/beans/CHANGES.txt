@@ -1,0 +1,20 @@
+
+    --  COL·LEX CHANGES.TXT  --
+    
+
+    
+..::  V.11.05.10  ::..
+- edu.xtec.colex.client.beans.ColexShareBean (ln 498-587)
+  Change send mail method to use the web services for send mails developed by the Departament d'Ensenyament de la Generalitat de Catalunya
+  
+- edu.xtec.colex.client.beans.colex_client_acc.properties (ln 35-53)
+  Take out old send mail parameters and put the new once
+    
+- edu.xtec.colex.client.beans.colex_client_int.properties (ln 35-53)
+  Take out old send mail parameters and put the new once
+    
+- edu.xtec.colex.client.beans.colex_client_pro.properties (ln 36-54)
+  Take out old send mail parameters and put the new once
+    
+- edu.xtec.colex.client.beans.colex_client_acc.properties (ln 35-53)
+  Take out old send mail parameters and put the new once
