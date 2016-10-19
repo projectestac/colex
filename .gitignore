@@ -1,6 +1,7 @@
 */build/
 */dist/
-nbproject/
 .idea
 */apidoc/
 *.iml
+.ear
+
