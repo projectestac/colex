@@ -111,8 +111,6 @@
                 <pathelement location="${lib.dir}/jsp-api.jar"/>
                 <pathelement location="${lib.dir}/mail.jar"/>
                 <pathelement location="${lib.dir}/mysql-connector-java-5.1.8-bin.jar"/>
-                <pathelement location="${lib.dir}/saaj-api.jar"/>
-                <pathelement location="${lib.dir}/saaj-impl.jar"/>
                 <pathelement location="${lib.dir}/sax.jar"/>
                 <pathelement location="${lib.dir}/servlet-api.jar"/>
                 <pathelement location="${lib.dir}/xalan.jar"/>
@@ -146,8 +144,6 @@
                 <include name="log4j-1.2.16.jar"/>
                 <include name="mail.jar"/>
                 <include name="mysql-connector-java-5.1.8-bin.jar"/>
-                <include name="saaj-api.jar"/>
-                <include name="saaj-impl.jar"/>
                 <include name="sax.jar"/>
                 <include name="xalan.jar"/>
                 <include name="xercesImpl.jar"/>
@@ -220,8 +216,6 @@
                 <pathelement location="${lib.dir}/log4j-1.2.16.jar"/>
                 <pathelement location="${lib.dir}/mail.jar"/>
                 <pathelement location="${lib.dir}/mysql-connector-java-5.1.8-bin.jar"/>
-                <pathelement location="${lib.dir}/saaj-api.jar"/>
-                <pathelement location="${lib.dir}/saaj-impl.jar"/>
                 <pathelement location="${lib.dir}/sax.jar"/>
                 <pathelement location="${lib.dir}/servlet-api.jar"/>
                 <pathelement location="${lib.dir}/xalan.jar"/>

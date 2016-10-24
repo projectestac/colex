@@ -139,6 +139,8 @@
                 <attribute name="Built-By"
                            value="${user.name}"/>
             </manifest>
+            <webinf file="${web.dir}/WEB-INF/weblogic.xml" />
+
             <lib dir="${lib.dir}">
                 <include name="activation.jar"/>
                 <include name="colex_domain.jar"/>

@@ -107,8 +107,6 @@
         <pathelement location="${lib.dir}/commons-io-1.1.jar"/>
         <pathelement location="${lib.dir}/dbconn.jar"/>
         <pathelement location="${lib.dir}/log4j-1.2.16.jar"/>
-        <pathelement location="${lib.dir}/saaj-api.jar"/>
-        <pathelement location="${lib.dir}/saaj-impl.jar"/>
         <pathelement location="${lib.dir}/xercesImpl.jar"/>
         <pathelement location="${lib.dir}/jsp-api.jar"/>
         <pathelement location="${lib.dir}/servlet-api.jar"/>
@@ -132,8 +130,6 @@
           <include name="commons-io-1.1.jar"/>
           <include name="dbconn.jar"/>
           <include name="log4j-1.2.16.jar"/>
-          <include name="saaj-api.jar"/> 
-          <include name="saaj-impl.jar"/> 
 	      <include name="xalan.jar"/> 
           <include name="xercesImpl.jar"/> 
         </lib>
