@@ -1,7 +1,7 @@
 */build/
 */dist/
-.idea
 */apidoc/
-*.iml
-.ear
 
+*.idea
+*.iml
+*.ear
