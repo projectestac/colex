@@ -87,7 +87,9 @@ public class ColexValidateBean extends ColexMainBean {
                 } else {
                     sMail = user + "@edu365.cat";
                 }
+                logger.debug("isValid sMail: " + sMail);
             } else {
+                logger.debug("ELSE go to ldap validation");
                 sMail = ldapValidation(user, pwd);
                 // There is neither an XTEC user
                 if (sMail == null) {
@@ -117,6 +119,7 @@ public class ColexValidateBean extends ColexMainBean {
                 response.addCookie(createCookie("cookie.portal", sPortal));
 
                 try {
+                    logger.debug("sendRedirect(url): " + url);
                     response.sendRedirect(url);
                 } catch (Exception ioe) {
                     ioe.printStackTrace();
@@ -196,7 +199,7 @@ public class ColexValidateBean extends ColexMainBean {
     /**
      *
      * @param userName
-     * @param passWord
+     * @param password
      * @return result of the ws invocation
      */
     public Vector wsValidation(String userName, String password) {

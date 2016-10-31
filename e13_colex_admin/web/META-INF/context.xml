@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/e13_colex_admin">
   <ResourceLink global="jdbc/colex" name="jdbc/colex" type="javax.sql.DataSource"/>
-  <Logger className="org.apache.catalina.logger.FileLogger" prefix="e13_colex_admin." suffix=".log" timestamp="true"/>
 </Context>

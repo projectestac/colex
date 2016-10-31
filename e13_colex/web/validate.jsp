@@ -132,7 +132,7 @@
                             <tr>
                                 <td class="mig6" colspan="2">
                                     <br/>
-                                    <ul><li type="square">Podeu accedir a aquesta aplicació amb un identificador XTEC, edu365.cat o <a href="http://blocs.xtec.cat">XTECBlocs</a>.</li></ul>
+                                    <ul><li type="square">Podeu accedir a aquesta aplicació amb un identificador XTEC o <a href="http://blocs.xtec.cat">XTECBlocs</a>.</li></ul>
                                 </td>
                             </tr>
                         </tbody></table>
