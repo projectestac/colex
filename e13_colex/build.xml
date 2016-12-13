@@ -121,6 +121,8 @@
                 <pathelement location="${lib.dir}/servlet-api.jar"/>
                 <pathelement location="${lib.dir}/colex_domain.jar"/>
                 <pathelement location="${lib.dir}/correoWS.jar"/>
+                <pathelement location="${lib.dir}/xalan.jar"/>
+                <pathelement location="${lib.dir}/xercesImpl.jar"/>
             </classpath>
         </javac>
 
@@ -227,8 +229,8 @@
                 <pathelement location="${lib.dir}/sax.jar"/>
                 <pathelement location="${lib.dir}/servlet-api.jar"/>
                 <pathelement location="${lib.dir}/soap.jar"/>
-                <pathelement location="${lib.dir}/xalan-2.7.1.jar"/>
-                <pathelement location="${lib.dir}/xercesImpl-2.9.1.jar"/>
+                <pathelement location="${lib.dir}/xalan.jar"/>
+                <pathelement location="${lib.dir}/xercesImpl.jar"/>
                 <pathelement location="${lib.dir}/xmlcomp.jar"/>
                 <pathelement location="${lib.dir}/xmlparserv2.jar"/>
             </classpath>

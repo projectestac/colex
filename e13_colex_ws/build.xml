@@ -133,6 +133,7 @@
                 <attribute name="Built-By"
                            value="${user.name}"/>
             </manifest>
+            <webinf file="${web.dir}/WEB-INF/weblogic.xml" />
             <lib dir="${lib.dir}">
                 <include name="activation.jar"/>
                 <include name="commons-fileupload-1.1-dev.jar"/>

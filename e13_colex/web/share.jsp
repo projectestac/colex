@@ -284,7 +284,7 @@ if(!colexshb.init(request, response)){%><jsp:forward page="redirect.jsp">
                 <a style="position: absolute; right: 10px; top: 302px;" href="#" onclick="javascript:sendMail()"><img alt="<%=colexshb.getMessage("sc.alt.send")%>" src="img/buttons/send.png"/></a>
             </div>
             
-            <div id="coverRightMidShare" <%--style="display: block;"--%>> </div>
+            <div id="coverRightMidShare">  </div>
          </div>
          
          
