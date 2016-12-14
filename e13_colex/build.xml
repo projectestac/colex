@@ -121,8 +121,6 @@
                 <pathelement location="${lib.dir}/servlet-api.jar"/>
                 <pathelement location="${lib.dir}/colex_domain.jar"/>
                 <pathelement location="${lib.dir}/correoWS.jar"/>
-                <pathelement location="${lib.dir}/xalan.jar"/>
-                <pathelement location="${lib.dir}/xercesImpl.jar"/>
             </classpath>
         </javac>
 
