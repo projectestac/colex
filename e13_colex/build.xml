@@ -142,29 +142,13 @@
             <webinf file="${web.dir}/WEB-INF/weblogic.xml" />
 
             <lib dir="${lib.dir}">
-                <include name="activation.jar"/>
                 <include name="colex_domain.jar"/>
-                <include name="commons-fileupload-1.1-dev.jar"/>
-                <include name="commons-io-1.1.jar"/>
-                <include name="dom.jar"/>
                 <include name="correoWS.jar"/>
-                <include name="http_client.jar"/>
-                <include name="javax-ssl-1_2.jar"/>
-                <include name="jaxp-api.jar"/>
-                <include name="jssl-1_2.jar"/>
-                <include name="log4j-1.2.16.jar"/>
-                <include name="mail.jar"/>
                 <include name="saaj-api.jar"/>
                 <include name="saaj-impl.jar"/>
-                <include name="sax.jar"/>
-                <include name="servlet-api.jar"/>
-                <include name="soap.jar"/>
+                <include name="log4j-1.2.16.jar"/>
                 <include name="xalan.jar"/>
                 <include name="xercesImpl.jar"/>
-                <include name="xmlcomp.jar"/>
-                <include name="xmlparserv2.jar"/>
-
-
             </lib>
         </war>
     </target>

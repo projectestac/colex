@@ -11,11 +11,7 @@
     
     <wls:context-root>/e13_colex/</wls:context-root>
     <wls:container-descriptor>
-        <wls:prefer-application-packages>
-            <wls:package-name>com.sun.xml.messaging.saaj.*</wls:package-name>
-            <wls:package-name>org.apache.xalan.*</wls:package-name>
-            <wls:package-name>org.apache.xerces.*</wls:package-name>
-        </wls:prefer-application-packages>
+            <wls:prefer-web-inf-classes>true</wls:prefer-web-inf-classes>
     </wls:container-descriptor>
     <wls:virtual-directory-mapping>
         <wls:local-path>/serveis/dades/int/w02/dataapps/1054/e13_colex</wls:local-path>

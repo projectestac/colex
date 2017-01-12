@@ -27,6 +27,11 @@ import java.io.*;
 import java.util.Vector;
 import java.util.Iterator;
 import javax.servlet.http.*;
+import java.security.CodeSource;
+import java.security.ProtectionDomain;
+import java.net.URL;
+import java.nio.charset.*;
+
 
 /**
  * Bean to processes all the requests from the JSP browse.jsp, where is
@@ -85,11 +90,11 @@ public class ColexBrowseBean extends ColexMainBean {
         try {
             if (operation != null) {
                 if (operation.equals("browse")) {
-                    logger.debug("Browse IN");
+                    //logger.debug("Browse IN");
                     browse();
-                    logger.debug("Browse OUT");
+                 //   logger.debug("Browse OUT");
                 } else if (operation.equals("allTags")) {
-                    logger.debug("AllTags IN");
+                  //  logger.debug("AllTags IN");
                     isAllTags = true;
                     NUM_TAGS = -1;
                 }
@@ -105,7 +110,7 @@ public class ColexBrowseBean extends ColexMainBean {
             e.printStackTrace(new PrintWriter(sw));
             String stacktrace = sw.toString();
 
-            logger.error("User: " + getUserId() + " StrackTrace: \n" + stacktrace);
+          //  logger.error("User: " + getUserId() + " StrackTrace: \n" + stacktrace);
             e.printStackTrace();
 
             bOK = false;
@@ -225,27 +230,69 @@ public class ColexBrowseBean extends ColexMainBean {
     private void listTagClouds(int numTags) throws SOAPException {
         try {
             smRequest = mf.createMessage();
-            logger.debug("smRequest: " + smRequest);
+         //   logger.debug("smRequest: " + smRequest);
             SOAPBodyElement sbeRequest = setRequestName(smRequest, "listTagClouds");
-            logger.debug("sbeRequest: " + sbeRequest);
+          //  logger.debug("sbeRequest: " + sbeRequest);
             Name n = sf.createName("numTags");
-            logger.debug("Name: " + n);
+          //  logger.debug("Name: " + n);
             SOAPElement seRequest = sbeRequest.addChildElement(n);
-            logger.debug("seRequest: " + seRequest);
+          //  logger.debug("seRequest: " + seRequest);
             Integer iNumTags = new Integer(numTags);
-            logger.debug("iNumTags: " + iNumTags);
+          //  logger.debug("iNumTags: " + iNumTags);
             seRequest.addTextNode(iNumTags.toString());
-            logger.debug("Before SaveChanges");
+         //   logger.debug("Before SaveChanges");
             smRequest.saveChanges();
-            logger.debug("Changes Saved");
+         //   logger.debug("Changes Saved");
             SOAPMessage smResponse = sendMessage(smRequest, this.getJspProperties().getProperty("url.servlet.portal"));
 
-            SOAPBody sbResponse = smResponse.getSOAPBody();
+       //     logger.debug("listTagClouds-> soapbody sbresponse 1" );
 
+            URL url = SOAPMessage.class.getResource(SOAPMessage.class.getSimpleName() + ".class");
+
+      /*      logger.debug("listTagClouds-> soapbody CLASS: " + url.toString());
+
+            logger.debug("Default Charset=" + Charset.defaultCharset());
+            logger.debug("file.encoding=" + System.getProperty("file.encoding"));
+            logger.debug("java.version=" + System.getProperty("java.version"));
+            logger.debug("java.vendor=" + System.getProperty("java.vendor"));
+            logger.debug("java.vendor.url=" + System.getProperty("java.vendor.url"));
+            logger.debug("java.home=" + System.getProperty("java.home"));
+            logger.debug("java.vm.specification.version=" + System.getProperty("java.vm.specification.version"));
+            logger.debug("java.vm.specification.vendor=" + System.getProperty("java.vm.specification.vendor"));
+            logger.debug("java.vm.specification.name=" + System.getProperty("java.vm.specification.name"));
+            logger.debug("java.vm.version=" + System.getProperty("java.vm.version"));
+            logger.debug("java.vm.vendor=" + System.getProperty("file.encoding"));
+            logger.debug("java.vm.name=" + System.getProperty("java.vm.name"));
+            logger.debug("java.specification.version=" + System.getProperty("java.specification.version"));
+            logger.debug("java.specification.vendor=" + System.getProperty("java.specification.vendor"));
+            logger.debug("java.specification.name=" + System.getProperty("java.specification.name"));
+            logger.debug("java.class.version=" + System.getProperty("java.class.version"));
+            logger.debug("java.class.path=" + System.getProperty("file.encoding"));
+            logger.debug("java.library.path=" + System.getProperty("java.class.path"));
+            logger.debug("java.io.tmpdir=" + System.getProperty("java.io.tmpdir"));
+            logger.debug("java.compiler=" + System.getProperty("java.compiler"));
+            logger.debug("java.ext.dirs=" + System.getProperty("java.ext.dirs"));
+            logger.debug("os.name=" + System.getProperty("os.name"));
+            logger.debug("os.arch=" + System.getProperty("os.arch"));
+            logger.debug("os.version=" + System.getProperty("os.version"));
+            logger.debug("file.separator=" + System.getProperty("file.separator"));
+            logger.debug("path.separator=" + System.getProperty("file.encoding"));
+            logger.debug("line.separator=" + System.getProperty("file.encoding"));
+            logger.debug("user.name=" + System.getProperty("user.name"));
+            logger.debug("user.home=" + System.getProperty("user.home"));
+            logger.debug("user.dir=" + System.getProperty("user.dir"));
+
+*/
+
+            SOAPBody sbResponse = smResponse.getSOAPBody();
+       //     logger.debug("listTagClouds-> soapbody sbresponse 2");
             if (sbResponse.hasFault()) {
+       //         logger.debug("checkFault");
                 checkFault(sbResponse, "browse");
             } else {
+         //       logger.debug("listTagClouds->getTagClouds 1");
                 vTags = getTagClouds(smResponse);
+           //     logger.debug("listTagClouds->getTagClouds 2");
 
                 int iMaxTimes = getIntValue(smResponse, "maxTimes");
                 int iMinTimes = getIntValue(smResponse, "minTimes");
@@ -330,6 +377,7 @@ public class ColexBrowseBean extends ColexMainBean {
      * @return the Vector
      */
     protected Vector getTagClouds(SOAPMessage sm) throws SOAPException {
+        logger.debug("getTagClouds IN");
         Vector vRes = new Vector();
 
         SOAPBody sb = sm.getSOAPBody();
@@ -349,7 +397,7 @@ public class ColexBrowseBean extends ColexMainBean {
             Tag t = new Tag((SOAPElement) it.next());
             vRes.add(t);
         }
-
+        logger.debug("getTagClouds EXIT");
         return vRes;
     }
 }
