@@ -1,0 +1,283 @@
+.OraHeaderSub
+{
+     font-size: 16pt;
+     color: #336699;
+}
+.OraInstructionText
+{
+     font-size: 10pt;
+     color: #000000;
+}
+.OraErrorHeader
+{
+     font-size: 11pt;
+     color: #CC0000;
+     font-weight: bold ;
+}
+.OraErrorText
+{
+     font-size: 10pt;
+     color: #000000;
+}
+.OraFieldText
+{
+     font-size: 10pt;
+     color: #000000;
+     font-weight: normal;
+}
+.OraCopyright
+{
+     font-size: 8pt;
+     color: #000000;
+}
+.OraHintText
+{
+     font-size: 9pt;
+     color: #000000;
+}
+.OraValueText
+{
+     font-size: 10pt;
+     color: #000000;
+     font-weight: bold;
+}
+
+em {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-style: normal;
+}
+
+a.info {
+    color: #464D68;
+    font-weight: bold;
+    text-decoration: none;
+}
+a.info:hover {
+    color: red;
+    font-weight: bold;
+}
+
+.botons {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
+.ruta {
+    font-size: 0.6em;
+    font-weight: bold;
+    color: #525870;
+    background-color: #BABECC;
+    text-decoration: none;
+}
+
+a.ruta:hover {
+    color: black;
+}
+
+.rutaactiu {
+    font-size: 0.6em;
+    font-weight: bold;
+    color: #222533;
+    background-color: #BABECC;
+}
+
+.textpetit {
+    font-size: 0.6em;
+    color: #4f4f4f;
+}
+
+.textmitja {
+    font-size: 0.7em;
+    color: #4f4f4f;
+}
+
+body {
+    background-color: white;
+    color: black;
+    margin: 0px;
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+img {
+    border: 0px;
+    vertical-align: baseline;
+}
+
+table.contenidor {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    border-spacing: 0px
+}
+
+td.contenidorsup {
+    vertical-align: top;
+    height: 58px;
+}
+
+td.contenidormig {
+    background-color: white;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+td.contenidorinf {
+    vertical-align: bottom;
+    height: 15px;
+}
+
+table.inferior {
+    width: 100%;
+    height: 15px;
+    border: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    border-spacing: 0px;
+    text-align: right;
+    vertical-align: middle;
+    font-size: 0.6em;
+    color: #4f4f4f;
+}
+
+table.superior {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    background-color: #666666;
+    border-spacing: 0px;
+}
+
+tr.l1 {
+    height: 38px;
+}
+
+tr.l2 {
+    height: 15px;
+}
+
+td.sup1 {
+    background-color: #666666;
+    text-align: left;
+    vertical-align: middle;
+    border-spacing: 0px;
+}
+
+td.sup2 {
+    width: 100px;
+    background-color: #343434;
+    text-align: right;
+    vertical-align: middle;
+    border-spacing: 0px;
+}
+
+td.sup3 {
+    background-color: #babecc;
+    text-align: left;
+    vertical-align: middle;
+    border-spacing: 0px;
+}
+
+td.sup4 {
+    width: 100px;
+    background-color: #a9adba;
+    text-align: right;
+    vertical-align: middle;
+    border-spacing: 0px;
+}
+
+table.mig {
+    width: 600px;
+    border: 10px;
+    padding: 0px;
+    border-spacing: 2;
+    text-align: center;
+}
+
+table.migcamps {
+    width: 600px;
+    border: 10px;
+    padding: 0px;
+    border-spacing: 0;
+    text-align: center;
+}
+
+td.mig1 {
+    font-size: 0.8em;
+    color: #000000;
+    font-weight: bold;
+    width: 100%;
+    margin: 4px 0px 4px 0px;
+    padding: 0px 0px 4px 0px;
+    height: 15px;
+    text-align: left;
+    border-spacing: 0;
+}
+
+td.mig2 {
+    font-size: 0.1em;
+    width: 100%;
+    background-color: #babecc;
+    margin: 4px 0px 4px 0px;
+    padding: 0px;
+    height: 15px;
+    border-spacing: 0;
+}
+
+td.mig3 {
+    background-color: #f3f3f3;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 4px 0px 4px 0px;
+    padding: 0px;
+    color: #4f4f4f;
+    width: 200px;
+    text-align: right;
+    border-spacing: 0;
+}
+
+td.mig4 {
+    background-color: #f3f3f3;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 4px 0px 4px 0px;
+    padding: 4px;
+    color: #4f4f4f;
+    width: 400px;
+    text-align: left;
+    border-spacing: 0;
+}
+td.mig5 {
+    color: #000000;
+    font-weight: bold;
+    width: 100%;
+    margin: 4px 0px 4px 0px;
+    padding: 0px;
+    height: 15px;
+    text-align: right;
+    border-spacing: 0;
+}
+td.mig6 {
+    font-size: 0.8em;
+    color: #000000;
+    width: 100%;
+    margin: 4px 0px 4px 0px;
+    padding: 0px;
+    height: 50px;
+    text-align: left;
+    border-spacing: 0;
+}
+td.mig7 {
+    background-color: #f3f3f3;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin: 4px 0px 4px 0px;
+    padding: 4px;
+    color: red;
+    width: 400px;
+    text-align: left;
+    border-spacing: 0;
+}

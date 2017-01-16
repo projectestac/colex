@@ -95,11 +95,11 @@ public abstract class ColexMainBean {
         this.response = response;
 
         iniLogger();
-        logger.debug("iniLogger");
+       // logger.debug("iniLogger");
         iniSoap();
-        logger.debug("iniSoap");
+      //  logger.debug("iniSoap");
         iniLanguage();
-        logger.debug("iniLanguage");
+      //  logger.debug("iniLanguage");
 
         boolean bOK = true;
 
@@ -171,14 +171,14 @@ public abstract class ColexMainBean {
         if (sUserId == null && request != null) {
             Cookie[] cookies = request.getCookies();
             if (cookies != null) {
-                logger.debug("Cookie.user_key: " + getJspProperties().getProperty("cookie.user_key"));
+            //    logger.debug("Cookie.user_key: " + getJspProperties().getProperty("cookie.user_key"));
                 for (int i = 0; i < cookies.length; i++) {
                     Cookie c = cookies[i];
-                    logger.debug("Cookies: " + c.getValue().trim() + " <--> " + i);
-                    logger.debug("Cookies-GETNAME: " + c.getName().trim() + " <--> " + i);
+               //     logger.debug("Cookies: " + c.getValue().trim() + " <--> " + i);
+              //      logger.debug("Cookies-GETNAME: " + c.getName().trim() + " <--> " + i);
                     if (c.getName().equals(getJspProperties().getProperty("cookie.user_key")) && c.getValue() != null) {
                         sUserId = c.getValue().trim();
-                        logger.debug("sUserId: " + sUserId + " <--> " + i);
+               //         logger.debug("sUserId: " + sUserId + " <--> " + i);
                         break;
                     }
                 }
@@ -309,21 +309,22 @@ public abstract class ColexMainBean {
     protected void iniSoap() {
         if ((scf == null) || (con == null) || (mf == null) || (sf == null)) {
             try {
-                logger.debug("iniSOAP IN <<");
+             //   logger.debug("iniSOAP IN <<");
                 System.setProperty("javax.xml.soap.MessageFactory", "com.sun.xml.messaging.saaj.soap.ver1_1.SOAPMessageFactory1_1Impl");
+                System.setProperty("javax.xml.soap.SOAPConnectionFactory", "com.sun.xml.messaging.saaj.client.p2p.HttpSOAPConnectionFactory");
+                System.setProperty("javax.xml.soap.SOAPFactory", "com.sun.xml.messaging.saaj.soap.ver1_1.SOAPFactory1_1Impl");
 
-                //System.setProperty("javax.xml.soap.MessageFactory", "com.sun.xml.messaging.saaj.soap.ver1_2.SOAPMessageFactory1_2Impl"); 
-                logger.debug("Property SET");
+             //   logger.debug("Property SET");
                 scf = SOAPConnectionFactory.newInstance();
-                logger.debug("SoapConnectioNFactory New Instance: " + scf);
+            //    logger.debug("SoapConnectioNFactory New Instance: " + scf);
                 con = scf.createConnection();
-                logger.debug("SCF Connected");
+            //    logger.debug("SCF Connected");
 
                 mf = MessageFactory.newInstance();
-                logger.debug("MessageFactory INSTANCE");
+            //    logger.debug("MessageFactory INSTANCE");
                 sf = SOAPFactory.newInstance();
-                logger.debug("SOAPFactory INSTANCE");
-                logger.debug("iniSOAP OUT <<");
+            //    logger.debug("SOAPFactory INSTANCE");
+            //    logger.debug("iniSOAP OUT <<");
             } catch (Exception e) {
                 logger.info("User: " + getUserId() + " Exception: " + e);
             }
@@ -389,14 +390,14 @@ public abstract class ColexMainBean {
      */
     protected SOAPMessage sendMessage(SOAPMessage smRequest, String sURL) throws SOAPException {
 
-        logger.debug("sURL - sendMessage_ColexMainBean.java: " + sURL);
+      //  logger.debug("sURL - sendMessage_ColexMainBean.java: " + sURL);
         
         SOAPMessage ReqMsg = smRequest;
         try {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             ReqMsg.writeTo(out);
             String strMsg = new String(out.toByteArray());
-            logger.debug("SoapMessage String: " + strMsg);
+          //  logger.debug("SoapMessage String 1: " + strMsg);
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(ColexMainBean.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
@@ -408,10 +409,11 @@ public abstract class ColexMainBean {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             msg.writeTo(out);
             String strMsg = new String(out.toByteArray());
-            logger.debug("SoapMessage String: " + strMsg);
+         //   logger.debug("SoapMessage String 2: " + strMsg);
         } catch (IOException ex) {
             java.util.logging.Logger.getLogger(ColexMainBean.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+     //   logger.debug("SOAPMessage sendMessage EXIT");
         return ret;
 
     }

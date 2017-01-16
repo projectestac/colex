@@ -1,5 +1,5 @@
 <%@page session="false" contentType="text/html; charset=iso-8859-1"%>
-<jsp:useBean id="colexab" class="edu.xtec.colex.admin.beans.AdminBean" scope="request" />
+<jsp:useBean id="colexab" class="edu.xtec.colex.admin.AdminBean" scope="request" />
 <%if(!colexab.init(request, response)){%><jsp:forward page="redirect.jsp">
  <jsp:param name="redirectPage" value="<%=colexab.getRedirectPage()%>"/>
 </jsp:forward><%}%>

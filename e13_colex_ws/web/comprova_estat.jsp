@@ -7,7 +7,7 @@
     try {
         DataBase oDB = new DataBase();
         oDB.listTagClouds(-1).isEmpty();
-        java.net.URL oURL = new java.net.URL("http://aplitic.xtec.cat/e13_colex/");
+        java.net.URL oURL = new java.net.URL("https://integracio.apliense.xtec.cat/e13_colex/");
         oURL.openStream();
     } catch (ServerException se) {
         msg = "ERROR: database connection failed (" + se.toString() + ")";
